@@ -1,0 +1,57 @@
+#include <iostream>
+
+class Complex {
+public:
+    float real, imag;
+
+    void input() {
+        std::cout << "Enter real and imaginary parts: ";
+        std::cin >> real >> imag;
+    }
+
+    void display() {
+        std::cout << real << " + " << imag << "i" << std::endl;
+    }
+
+    Complex add(const Complex& other) {
+        Complex result;
+        result.real = real + other.real;
+        result.imag = imag + other.imag;
+        return result;
+    }
+
+    Complex subtract(const Complex& other) {
+        Complex result;
+        result.real = real - other.real;
+        result.imag = imag - other.imag;
+        return result;
+    }
+
+    Complex multiply(const Complex& other) {
+        Complex result;
+        result.real = real * other.real - imag * other.imag;
+        result.imag = real * other.imag + imag * other.real;
+        return result;
+    }
+};
+
+int main() {
+    Complex c1, c2;
+
+    std::cout << "Enter first complex number:\n";
+    c1.input();
+
+    std::cout << "Enter second complex number:\n";
+    c2.input();
+
+    std::cout << "Sum: ";
+    c1.add(c2).display();
+
+    std::cout << "Difference: ";
+    c1.subtract(c2).display();
+
+    std::cout << "Product: ";
+    c1.multiply(c2).display();
+
+    return 0;
+}

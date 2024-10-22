@@ -1,0 +1,14 @@
+#include <iostream>
+
+int main() {
+    float centigrade, fahrenheit;
+
+    std::cout << "Enter temperature in Centigrade: ";
+    std::cin >> centigrade;
+
+    fahrenheit = (centigrade * 9 / 5) + 32;
+
+    std::cout << "Temperature in Fahrenheit: " << fahrenheit << std::endl;
+
+    return 0;
+}
